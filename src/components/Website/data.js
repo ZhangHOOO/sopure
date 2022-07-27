@@ -45,6 +45,11 @@ export const toolsData = [
     title: "Convert Css to React Style JSON by staxmanade",
     url: "https://staxmanade.com/CssToReact/",
   },
+  {
+    title: "Downloading WinSCP-5.21.1-Setup.exe :: WinSCP",
+    url: "https://winscp.net/eng/index.php",
+    description: "上传文件到服务器",
+  },
 ];
 
 export const onlineCodeData = [

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import { Col, Row, Anchor } from "antd";
 import { useResponsive } from "ahooks";
+import { Anchor, Col, Row, Tooltip } from "antd";
 
 import data from "./data";
 const { Link } = Anchor;
@@ -16,19 +16,21 @@ function App() {
         <h2 className="type">{type}</h2>
         <Row gutter={[40, 40]}>
           {data.map((item) => {
-            const { title, url } = item;
+            const { title, url, description } = item;
             return (
               <Col xs={{ span: 24 }} lg={{ span: 6 }}>
-                <div className="card">
-                  <a
-                    className="card-description"
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <h4>{title}</h4>
-                  </a>
-                </div>
+                <Tooltip placement="top" title={description}>
+                  <div className="card">
+                    <a
+                      className="card-description"
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <h4>{title}</h4>
+                    </a>
+                  </div>
+                </Tooltip>
               </Col>
             );
           })}
