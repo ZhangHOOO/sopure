@@ -1,19 +1,19 @@
-export const news = [
+export const community = [
   {
-    title: "Trending  repositories on GitHub today",
+    title: "GitHub",
     url: "https://github.com/trending?spoken_language_code=zh",
   },
   {
-    title: "前端-掘金",
-    url: "https://juejin.cn/frontend",
+    title: "SegmentFault 思否",
+    url: "https://segmentfault.com/questions/hottest/weekly",
   },
   {
-    title: "前端 - SegmentFault 思否",
-    url: "https://segmentfault.com/channel/frontend",
+    title: "掘金",
+    url: "https://juejin.cn/frontend?sort=three_days_hottest",
   },
   {
-    title: "热门的问题 SegmentFault 思否",
-    url: "https://segmentfault.com/questions/hottest/monthly",
+    title: "科技爱好者周刊",
+    url: "https://github.com/ruanyf/weekly",
   },
 ];
 
@@ -30,25 +30,52 @@ export const personalBlogData = [
     title: "山月的琐碎博客记录 | 山月行",
     url: "https://shanyue.tech/",
   },
+
   {
-    title: "ruanyf/weekly: 科技爱好者周刊，每周五发布",
-    url: "https://github.com/ruanyf/weekly",
+    title: "React技术揭秘",
+    url: "https://react.iamkasong.com/#%E5%AF%BC%E5%AD%A6%E8%A7%86%E9%A2%91",
+  },
+  {
+    title: "Vue.js 技术揭秘",
+    url: "https://ustbhuangyi.github.io/vue-analysis/v2/prepare/",
+  },
+  {
+    title: "前端精读周刊",
+    url: "https://github.com/ascoders/weekly",
+  },
+  {
+    title: "开源项目",
+    url: "https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo",
   },
 ];
 
 export const toolsData = [
   {
+    title: "notion",
+    url: "https://www.notion.so/615fde198d7d4d3eac274f4f0bc04673?v=096153e08fa04b0b91f07f38bab57559",
+  },
+  {
     title: "npm",
     url: "https://www.npmjs.com/",
   },
   {
-    title: "Convert Css to React Style JSON by staxmanade",
+    title: "Css to React Style",
     url: "https://staxmanade.com/CssToReact/",
   },
   {
-    title: "Downloading WinSCP-5.21.1-Setup.exe :: WinSCP",
+    title: "WinSCP",
     url: "https://winscp.net/eng/index.php",
     description: "上传文件到服务器",
+  },
+  {
+    title: "mock.js",
+    url: "http://mockjs.com/examples.html",
+    description: "生成mock数据的规则",
+  },
+  {
+    title: "fastmock",
+    url: "https://www.fastmock.site/#/project/9a97923dc5db6bd1c78cba9b61916bce",
+    description: "mock数据并直接生成url链接",
   },
 ];
 
@@ -79,10 +106,14 @@ export const reactui = [
     title: "Chakra UI",
     url: "https://chakra-ui.com/docs/components/button",
   },
-
   {
     title: "React-Bootstrap",
     url: "https://react-bootstrap.github.io/components/buttons/",
+  },
+  {
+    title: "Docusaurus",
+    url: "https://docusaurus.io/zh-CN/",
+    description: "react md文档博客",
   },
 ];
 
@@ -146,7 +177,7 @@ export const npmlibrary = [
     url: "https://styled-components.com/",
   },
   {
-    title: "TypeScript: JavaScript With Syntax For Types.",
+    title: "TypeScript",
     url: "https://www.typescriptlang.org/",
   },
 ];
@@ -158,12 +189,24 @@ export const api = [
   },
 ];
 
+export const questions = [
+  {
+    title: "leetcode",
+    url: "https://leetcode.cn/leetbook/",
+  },
+  {
+    title: "基础题",
+    url: "https://github.com/CavsZhouyou/Front-End-Interview-Notebook",
+  },
+];
+
 const arr = [
-  { type: "社区", data: news },
+  { type: "社区", data: community },
   { type: "个人博客", data: personalBlogData },
   { type: "npm库", data: npmlibrary },
   { type: "api", data: api },
   { type: "工具", data: toolsData },
+  { type: "面试", data: questions },
   { type: "在线编程", data: onlineCodeData },
   { type: "react ui", data: reactui },
   { type: "文档", data: documentation },
