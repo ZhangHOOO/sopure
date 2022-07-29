@@ -91,6 +91,7 @@ const Main = styled.div`
   }
 
   .select {
+    cursor: pointer;
     .ant-select-selector {
       width: 8rem;
       height: 4rem !important ;

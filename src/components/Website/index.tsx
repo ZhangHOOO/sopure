@@ -42,9 +42,17 @@ function App() {
   return (
     <Main>
       <Left targetOffset={20}>
-        <Link href="#search" title="搜索" />
+        <Link
+          href="#search"
+          title={<span style={{ color: "#9baacf" }}>搜索</span>}
+        />
         {data.map((el) => {
-          return <Link href={`#${el.type}`} title={el.type} />;
+          return (
+            <Link
+              href={`#${el.type}`}
+              title={<span style={{ color: "#9baacf" }}>{el.type}</span>}
+            />
+          );
         })}
       </Left>
 
@@ -81,6 +89,7 @@ const Main = styled.div`
   .type {
     /* padding: 0 50px; */
     margin-bottom: 40px;
+    color: #9baacf;
   }
 
   .card-list {
@@ -142,6 +151,8 @@ const Right = styled.div`
   }
 `;
 
-const Left = styled(Anchor)``;
+const Left = styled(Anchor)`
+  color: red !important;
+`;
 
 export default App;
