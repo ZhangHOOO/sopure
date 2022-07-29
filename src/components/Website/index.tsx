@@ -44,13 +44,19 @@ function App() {
       <Left targetOffset={20}>
         <Link
           href="#search"
-          title={<span style={{ color: "#9baacf" }}>搜索</span>}
+          title={
+            <span style={{ color: "#9baacf", fontWeight: "bold" }}>搜索</span>
+          }
         />
         {data.map((el) => {
           return (
             <Link
               href={`#${el.type}`}
-              title={<span style={{ color: "#9baacf" }}>{el.type}</span>}
+              title={
+                <span style={{ color: "#9baacf", fontWeight: "bold" }}>
+                  {el.type}
+                </span>
+              }
             />
           );
         })}
@@ -89,7 +95,8 @@ const Main = styled.div`
   .type {
     /* padding: 0 50px; */
     margin-bottom: 40px;
-    color: #9baacf;
+    color: #6d5dfc;
+    font-weight: bold;
   }
 
   .card-list {
