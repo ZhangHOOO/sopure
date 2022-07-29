@@ -1,10 +1,8 @@
 import { useResponsive } from "ahooks";
-import { Input, Select } from "antd";
+import { Input } from "antd";
 import React, { useEffect, useState } from "react";
 import { useStores } from "store/usestore";
 import styled from "styled-components";
-
-const { Option } = Select;
 
 function App() {
   const { commonStore } = useStores();
@@ -31,25 +29,13 @@ function App() {
 
   return (
     <Main id="search">
-      <div className="search1">
-        <input type="text" className="search__input" placeholder="Search..." />
-        <div className="search__icon">
-          {/* <ion-icon name="search"></ion-icon> */}
-        </div>
-      </div>
-
       <Input.Group compact className="search" size="large">
         <Select
-          // bordered={false}
-          defaultOpen={true}
           defaultValue="Google"
           className="select"
-          dropdownClassName="dropdownClassName"
-          size="large"
           onChange={(e) => {
-            console.log("App ~ e", e);
-
-            setSearchType(e);
+            console.log("App ~ e", e.target.value);
+            setSearchType(e.target.value);
           }}
         >
           <Option value="Google">Google</Option>
@@ -58,6 +44,7 @@ function App() {
         <Input
           style={{ width: responsive.lg ? "30%" : "80%" }}
           className="input"
+          placeholder="Search..."
           // style={{ width: "30%" }}
           defaultValue=""
           onPressEnter={jumpUrl}
@@ -87,7 +74,7 @@ const Main = styled.div`
     border: none;
     /* border-radius: 1rem !important; */
     font-size: 1.4rem;
-    padding-left: 3.8rem;
+    padding-left: 2rem;
     box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
       inset -0.2rem -0.2rem 0.5rem var(--white);
     background: none;
@@ -188,6 +175,50 @@ const Main = styled.div`
     color: var(--greyDark);
     transition: 0.3s ease;
   }
+`;
+
+const Select = styled.select`
+  appearance: none;
+  text-indent: 10px;
+  width: 8rem;
+  height: 4rem !important ;
+  border: none;
+  font-size: 1.4rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  background: none;
+  font-family: inherit;
+  color: var(--greyDark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none !important;
+  border: none !important;
+
+  &::placeholder {
+    color: var(--greyLight-3);
+  }
+  &:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+      -0.2rem -0.2rem 0.5rem var(--white);
+  }
+
+  option {
+    /* text-align: center; */
+  }
+  option:hover {
+    background-color: yellow !important;
+  }
+
+  option:active {
+    background-color: red !important;
+  }
+`;
+
+const Option = styled.option`
+  text-align: center;
 `;
 
 export default App;

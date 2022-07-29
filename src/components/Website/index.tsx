@@ -27,7 +27,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <h4>{title}</h4>
+                      {title}
                     </a>
                   </div>
                 </Tooltip>
@@ -93,9 +93,8 @@ const Main = styled.div`
   .card {
     font-size: 1rem;
     text-decoration: none;
-    -webkit-box-shadow: 2px -1px 13px 0px rgba(50, 50, 50, 0.43);
-    -moz-box-shadow: 2px -1px 13px 0px rgba(50, 50, 50, 0.43);
-    box-shadow: 2px -1px 13px 0px rgba(50, 50, 50, 0.43);
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+      -0.2rem -0.2rem 0.5rem var(--white);
     transition: transform 0.1s ease-in-out, box-shadow 0.1s;
     display: flex;
     justify-content: center;
@@ -103,17 +102,28 @@ const Main = styled.div`
   }
 
   .card:hover {
-    transform: translateY(-0.5rem) scale(1.0125);
-    box-shadow: 0 0.5em 3rem -1rem rgba(0, 0, 0, 0.5);
+    transform: translateY(-0.5rem) scale(1.03);
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+      -0.2rem -0.2rem 0.5rem var(--white);
   }
 
   .card-description {
+    width: 100%;
+    height: 100%;
+    text-align: center;
     display: block;
     padding: 1em 0.5em;
     color: #515151;
     font-size: large;
     font-weight: 600;
     text-decoration: none;
+    color: var(--greyDark);
+    &:hover {
+      color: var(--primary);
+    }
+    &:active {
+      box-shadow: $inner-shadow;
+    }
   }
 
   .card-description > h2 {
