@@ -77,6 +77,11 @@ export const toolsData = [
     url: "https://www.fastmock.site/#/project/9a97923dc5db6bd1c78cba9b61916bce",
     description: "mock数据并直接生成url链接",
   },
+  {
+    title: "DownGit",
+    url: "http://zhoudaxiaa.gitee.io/downgit/#/home?url=",
+    description: "下载GitHub单独文件",
+  },
 ];
 
 export const onlineCodeData = [
