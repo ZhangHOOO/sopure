@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { useResponsive } from "ahooks";
 import { Anchor, Col, Row, Tooltip } from "antd";
 
-import data from "./data";
 const { Link } = Anchor;
 function App() {
   const responsive = useResponsive();
+  const [allData, setAllData] = useState([]);
+
   console.log("App ~ responsive", responsive);
 
   const Card = (data, type) => {
@@ -39,6 +40,18 @@ function App() {
     );
   };
 
+  const getData = () => {
+    fetch(
+      "https://www.fastmock.site/mock/d9193693a83cc9b4e1f3dff217fe6fa8/sopure/alldata"
+    )
+      .then((response) => response.json())
+      .then((data) => setAllData(data));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Main>
       <Left targetOffset={20}>
@@ -48,7 +61,7 @@ function App() {
             <span style={{ color: "#9baacf", fontWeight: "bold" }}>搜索</span>
           }
         />
-        {data.map((el) => {
+        {allData.map((el) => {
           return (
             <Link
               href={`#${el.type}`}
@@ -63,7 +76,7 @@ function App() {
       </Left>
 
       <Right>
-        {data.map((el) => {
+        {allData.map((el) => {
           return <div id={el.type}> {Card(el.data, el.type)}</div>;
         })}
       </Right>
