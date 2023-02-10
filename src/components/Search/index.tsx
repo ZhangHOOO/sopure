@@ -1,17 +1,19 @@
 import { useResponsive } from "ahooks";
-import { Input } from "antd";
+import { Input, Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import { useStores } from "store/usestore";
 import styled from "styled-components";
-
 function App() {
   const { commonStore } = useStores();
   const { language } = commonStore;
   const [question, setQuestion] = useState("");
   const [searchType, setSearchType] = useState("");
+
   const responsive = useResponsive();
 
   useEffect(() => {}, []);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const jumpUrl = () => {
     switch (searchType) {
@@ -27,8 +29,35 @@ function App() {
     }
   };
 
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const checkPassWord = (e) => {
+    if (e.target.value === "123321") {
+      window.open("https://www.baidu.com/");
+    }
+  };
+
   return (
     <Main id="search">
+      <Modal
+        title="验证"
+        closable={true}
+        visible={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <Input onChange={checkPassWord} />
+      </Modal>
       <Input.Group compact className="search" size="large">
         <Select
           defaultValue="Google"
@@ -53,6 +82,10 @@ function App() {
             setQuestion(val.target.value);
           }}
         />
+        <div
+          onClick={showModal}
+          style={{ width: "100px", height: "100px" }}
+        ></div>
       </Input.Group>
 
       {/*  */}
